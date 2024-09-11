@@ -72,9 +72,19 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->EnergyPoints == 0)
+	if (!amount)
+	{
+		std::cout << this->Name << " can't be repaired because amount is too low." << std::endl;
+		return ;
+	}
+	else if (this->EnergyPoints == 0)
 	{
 		std::cout << this->Name << " can't be repaired because no energy points left." << std::endl;
+		return ;
+	}
+	else if (this->Hit + amount > 10)
+	{
+		std::cout << this->Name << " can't be repaired because he is full life." << std::endl;
 		return ;
 	}
 	this->Hit += amount;

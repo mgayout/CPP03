@@ -35,3 +35,4 @@ int main(void)
 	c.beRepaired(100);
 	c.attack("Bob");
 }
+

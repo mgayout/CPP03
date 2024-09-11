@@ -12,7 +12,7 @@
 
 NAME	= a.out
 FLAG	= -Wall -Wextra -Werror -std=c++98
-SRC		= main.cpp Claptrap.cpp
+SRC		= main.cpp ClapTrap.cpp
 
 all: $(NAME)
 
