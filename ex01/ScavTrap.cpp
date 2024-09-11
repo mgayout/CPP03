@@ -44,6 +44,17 @@ ScavTrap::~ScavTrap(void)
 	std::cout << "ScavTrap (" << this->Name << "): Bye Bye ..." << std::endl;
 }
 
+void	ScavTrap::attack(const std::string& target)
+{
+	if (this->EnergyPoints > 0)
+	{
+		std::cout << "ScavTrap " << this->Name << " attacks " << target << ", causing " << this->AttackDamage << " point(s) of damage!" << std::endl;
+		this->EnergyPoints	-= 1;
+	}
+	else
+		std::cout << "ScavTrap " << this->Name << " can't attack " << target << " because no energy points left." << std::endl;
+}
+
 void	ScavTrap::guardGate(void)
 {
 	std::cout << this->Name << " is now in Gate keeper mode." << std::endl;

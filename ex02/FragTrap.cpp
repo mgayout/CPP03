@@ -44,7 +44,18 @@ FragTrap::~FragTrap()
 		std::cout << "FragTrap (" << this->Name << "): Bye Bye ..." << std::endl;
 }
 
+void	FragTrap::attack(const std::string& target)
+{
+	if (this->EnergyPoints > 0)
+	{
+		std::cout << "FragTrap " << this->Name << " attacks " << target << ", causing " << this->AttackDamage << " point(s) of damage!" << std::endl;
+		this->EnergyPoints	-= 1;
+	}
+	else
+		std::cout << "FragTrap " << this->Name << " can't attack " << target << " because no energy points left." << std::endl;
+}
+
 void	FragTrap::highFivesGuys()
 {
-		std::cout << this->Name << "would like to high five everyone!" << std::endl;
+		std::cout << this->Name << " would like to high five everyone!" << std::endl;
 }
